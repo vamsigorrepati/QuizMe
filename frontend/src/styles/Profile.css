@@ -1,0 +1,37 @@
+.nav-space {
+  height: 80px;
+}
+
+.circular-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-letter {
+  background-color: #09a7e6;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.username-display {
+  font-size: 20px;
+  color: #d9dde8;
+  padding-left: 20px;
+}
+
+.profile-search-container {
+  color: #2e3856;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}

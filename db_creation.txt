@@ -1,0 +1,102 @@
+-- Create and use quizme database
+CREATE DATABASE quizme;
+USE quizme;
+
+
+-- Drop tables if they already exist
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS decks;
+DROP TABLE IF EXISTS cards;
+DROP TABLE IF EXISTS user_progress;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS deck_tags;
+DROP TABLE IF EXISTS card_tags;
+DROP TABLE IF EXISTS favorite_decks;
+DROP TABLE IF EXISTS recent_decks;
+
+
+-- Table to store user information
+CREATE TABLE users (
+    user_id VARCHAR(32) PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    is_confirmed BOOLEAN NOT NULL
+);
+
+-- Table to store decks (collections of flashcards)
+CREATE TABLE decks (
+    deck_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id VARCHAR(32),
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- Table to store flashcards
+CREATE TABLE cards (
+    card_id INT PRIMARY KEY AUTO_INCREMENT,
+    deck_id INT,
+    question TEXT NOT NULL,
+    answer TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (deck_id) REFERENCES decks(deck_id) ON DELETE CASCADE
+);
+
+-- Table to track user progress in decks
+CREATE TABLE user_progress (
+    user_id VARCHAR(32),
+    deck_id INT,
+    score INT,
+    last_completed TIMESTAMP,
+    PRIMARY KEY (user_id, deck_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (deck_id) REFERENCES decks(deck_id) ON DELETE CASCADE
+);
+
+-- Table to store tags
+CREATE TABLE tags (
+    tag_id INT PRIMARY KEY AUTO_INCREMENT,
+    tag_name VARCHAR(255) NOT NULL
+);
+
+-- Table to associate decks with tags
+CREATE TABLE deck_tags (
+    deck_id INT,
+    tag_id INT,
+    PRIMARY KEY (deck_id, tag_id),
+    FOREIGN KEY (deck_id) REFERENCES decks(deck_id) ON DELETE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES tags(tag_id) ON DELETE CASCADE
+);
+
+-- Table to associate flashcards with tags
+CREATE TABLE card_tags (
+    card_id INT,
+    tag_id INT,
+    PRIMARY KEY (card_id, tag_id),
+    FOREIGN KEY (card_id) REFERENCES cards(card_id) ON DELETE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES tags(tag_id) ON DELETE CASCADE
+);
+
+-- Table to store users' favorite decks
+CREATE TABLE favorite_decks (
+    user_id VARCHAR(32),
+    deck_id INT,
+    creator_id VARCHAR(32),
+    PRIMARY KEY (user_id, deck_id, creator_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (deck_id) REFERENCES decks(deck_id) ON DELETE CASCADE,
+    FOREIGN KEY (creator_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- Table to store users' recent decks
+CREATE TABLE recent_decks (
+    insertion_order INT PRIMARY KEY AUTO_INCREMENT,
+    user_id VARCHAR(32),
+    deck_id INT,
+    creator_id VARCHAR(32),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (deck_id) REFERENCES decks(deck_id) ON DELETE CASCADE,
+    FOREIGN KEY (creator_id) REFERENCES users(user_id) ON DELETE CASCADE
+);

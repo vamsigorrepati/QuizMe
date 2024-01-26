@@ -1,0 +1,243 @@
+.create-set {
+  background-color: #0a092d;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+}
+
+.nav-space {
+  height: 80px;
+}
+
+.heading {
+  color: #f6f7fb;
+  font-size: 24px;
+  padding: 40px 100px 20px 100px;
+}
+
+.input-title-box input:focus,
+.input-description-box textarea:focus {
+  border-bottom: 2px solid #a8b1ff;
+}
+
+.input-title-box,
+.input-description-box {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.input-title-box input,
+.input-description-box textarea {
+  background: #2e3856;
+  color: #f6f7fb;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.input-title-box input::placeholder,
+.input-description-box textarea::placeholder {
+  color: #f6f7fb;
+}
+
+.input-description-box textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+.term-definition-container {
+  display: flex;
+  justify-content: space-between;
+  background: #2e3856;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.term-input, .definition-input {
+  font-size: medium;
+  color: #f6f7fb;
+  background: transparent;
+  border: none;
+  border-bottom: 0.15rem solid #f6f7fb;
+  outline: none;
+  transition: border-color 0.3s;
+  max-height: 400px;
+  resize: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.term-input:focus, .definition-input:focus {
+  border-bottom: 4px solid #FFD700;
+}
+
+.input-label {
+  font-size: 12px;
+  color: #f6f7fb;
+  margin-top: 4px;
+}
+
+.card-wrapper {
+  transition: margin-top 0.5s ease-out;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+
+.numbering-box {
+  background: #2e3856;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 3px;
+  position: relative;
+}
+
+.numbering-label {
+  font-size: 16px;
+  color: #f6f7fb;
+  transition: opacity 0.5s ease;
+}
+
+.icon-container {
+  position: absolute;
+  right: 25px;
+  display: inline-block;
+}
+
+.trash-icon, .grip-icon {
+  color: #f6f7fb;
+  transition: color 0.3s ease;
+  cursor: grab;
+}
+
+.term-input::placeholder,
+.definition-input::placeholder {
+  color: #f6f7fb;
+}
+
+.trash-icon:hover {
+  visibility: visible;
+  opacity: 1;
+  color: yellow;
+}
+
+.trash-icon.clicked {
+  color: yellow;
+}
+
+.term-definition-container {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  clear: both;
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.numbering-box, .term-definition-container {
+  transition: margin 0.5s ease-out;
+}
+
+.add-card-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2e3856;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px 100px;
+  cursor: pointer;
+}
+
+.add-card-label {
+  font-size: 16px;
+  color: #f6f7fb;
+  padding-bottom: 4px;
+  border-bottom: 0.25rem solid #00B2A9;
+}
+
+.add-card-box:hover .add-card-label {
+  color: #EBC156;
+  border-bottom: 0.25rem solid #EBC156
+}
+
+.create-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 100px 20px;
+  padding-bottom: 20px;
+}
+
+.create-button {
+  padding: 1.25rem 1.875rem;
+  background-color: #4255ff;
+  color: #f6f7fb;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-button:hover {
+  background-color: #423ed8;
+}
+
+.back-to-set {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.back-to-set:hover {
+  text-decoration: underline;
+}
+
+.edit-mode-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-button {
+  align-content: center;
+  background-color: #ff6e4c;
+  padding: 0.875rem 1.25rem;
+  color: #f6f7fb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 100px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff825b;
+}

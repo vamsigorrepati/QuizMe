@@ -1,0 +1,50 @@
+body {
+    background-color: #0a092d;
+}
+
+.verificationpage {
+    background-color: #0a092d;
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+.nav-space {
+    height: 80px;
+}
+
+.section-title {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.scroll-box {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    margin-left: 15px;
+    color: white;
+    font-weight: 400;
+}
+
+.text {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.resend {
+    display: flex;
+}
+
+.link {
+    margin-top: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: #00dcff;
+    text-decoration: underline;
+}
+
+.error_msg {
+    margin-top: 15px;
+    margin-left: 15px;
+}

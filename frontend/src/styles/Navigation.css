@@ -1,0 +1,19 @@
+#navbar {
+    height: 30px;
+    width: 100%;
+    background-color: #bbb;
+    display: flex;
+    align-items: center;
+}
+
+#nav-items {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-items > * {
+    text-decoration: none;
+    color: black;
+}

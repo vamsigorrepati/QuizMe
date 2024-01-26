@@ -1,0 +1,69 @@
+.settings-container {
+    background-color: #0a092d;
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+.nav-space {
+    height: 80px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 20px;
+    border: 1px solid #f6f7fb;
+    border-radius: 5px;
+    margin: 40px 100px 40px 100px;
+}
+
+.settings-form h2, 
+.settings-form h3, 
+.settings-form h4 {
+    color: #f6f7fb;
+    padding: 0px 10px 10px 0px;
+}
+  
+.settings-form p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f6f7fb;
+    text-align: left;
+    padding: 10px 10px 10px 0px;
+}
+
+.account-deletion {
+    background-color: #2e3856;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.deletion-container {
+    display: inline-block;
+}
+  
+.deletion-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    font-size: medium;
+    border-radius: 8px;
+    background-color: #ff6e4c;
+    color: #f6f7fb;
+    text-align: center; /* Center text within the button */
+    line-height: 1;
+}
+
+.deletion-button:hover {
+    cursor: pointer;
+    background-color: #ff825b;
+}
+
+.deletion-icon {
+    margin-right: 10px;
+    color: #f6f7fb;
+}
+  
