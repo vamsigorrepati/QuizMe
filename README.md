@@ -1,5 +1,7 @@
 # Welcome to QuizMe!
 
+CPSC 419/519 (Full Stack Development) project with Feranmi Oluwadairo, Mofeed Nagib, Vamsi Gorrepati, and Alex Romero-Ruffo
+
 ## About
 
 In the realm of study tools, students are consistently in search of the latest and most effective study techniques to optimize their time spent learning. Quizlet has long dominated this market with its innovative features and rich array of study materials. Nevertheless, over the past few years, many of the features that users have come to appreciate are now obscured behind a paywall. In light of this, students are actively exploring alternative options. Enter Quizme, a Quizlet clone equipped with all the original features of the study platform, bringing it back to the essentials.
